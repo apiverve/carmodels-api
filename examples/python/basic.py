@@ -17,14 +17,11 @@ def call_carmodels_api():
     Make a GET request to the Car Models API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;year&#x27;: &#x27;2020&#x27;, &#x27;make&#x27;: &#x27;Toyota&#x27;, &#x27;model&#x27;: &#x27;Camry&#x27;, &#x27;trim&#x27;: &#x27;LE&#x27;}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
