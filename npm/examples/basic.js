@@ -15,10 +15,8 @@ const api = new carmodelsAPI({
 
 // Example query
 var query = {
-  year: "2020",
   make: "Toyota",
-  model: "Camry",
-  trim: "LE"
+  year: 2024
 };
 
 // Make the API request using callback
