@@ -12,15 +12,8 @@ public class BasicExample {
         CarModelsAPIClient client = new CarModelsAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Query parameters
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;year&quot;, &quot;2020&quot;);
-        parameters.put(&quot;make&quot;, &quot;Toyota&quot;);
-        parameters.put(&quot;model&quot;, &quot;Camry&quot;);
-        parameters.put(&quot;trim&quot;, &quot;LE&quot;);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
