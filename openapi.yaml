@@ -1,53 +1,42 @@
 openapi: 3.0.4
 info:
   title: Car Models
-  description: Car Models is a simple tool for getting information on cars. It returns information on various car models
+  description: >-
+    Car Models is a simple tool for getting information on cars. It returns
+    information on various car models including makes, models, trims, and
+    specifications.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/carmodels:
     get:
-      summary: Get Car Model Information
-      description: Car Models is a simple tool for getting information on cars. It returns information on various car models
+      summary: List Cars by Make
+      description: Get all car models for a specific make (manufacturer)
       operationId: carmodels
       parameters:
-      - name: year
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The year of the car to get information about
-        example: '2020'
-      - name: make
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The make of the car to get information about
-        example: Toyota
-      - name: model
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The model of the car to get information about
-        example: Camry
-      - name: trim
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The trim of the car to get information about
-        example: LE
+        - name: make
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The make (manufacturer) of the car (e.g., Toyota, Honda, Ford)
+          example: Toyota
+        - name: year
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Filter by year (1984-present)
+          example: 2024
       responses:
         '200':
           description: Successful Response
@@ -63,88 +52,88 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   count: 4
                   filteredOn:
-                  - year
-                  - make
-                  - model
+                    - year
+                    - make
+                    - model
                   cars:
-                  - Make: Acura
-                    CityMPG: '30'
-                    CityELEC: '0'
-                    CombMPG: '33'
-                    CombELEC: '0'
-                    Cyl: '4'
-                    Displace: '1.5'
-                    Drive: Front-Wheel Drive
-                    Fuel: Premium
-                    HighwELEC: '0'
-                    HighwMPG: '37'
-                    Trans: Automatic (AV-S7)
-                    Size: Large Cars
-                    Year: '2024'
-                    Trim: Integra
-                    Model: Integra
-                  - Make: Acura
-                    CityMPG: '21'
-                    CityELEC: '0'
-                    CombMPG: '24'
-                    CombELEC: '0'
-                    Cyl: '4'
-                    Displace: '2'
-                    Drive: Front-Wheel Drive
-                    Fuel: Premium
-                    HighwELEC: '0'
-                    HighwMPG: '28'
-                    Trans: Manual 6-spd
-                    Size: Large Cars
-                    Year: '2024'
-                    Trim: Integra
-                    Model: Integra
-                  - Make: Acura
-                    CityMPG: '26'
-                    CityELEC: '0'
-                    CombMPG: '30'
-                    CombELEC: '0'
-                    Cyl: '4'
-                    Displace: '1.5'
-                    Drive: Front-Wheel Drive
-                    Fuel: Premium
-                    HighwELEC: '0'
-                    HighwMPG: '36'
-                    Trans: Manual 6-spd
-                    Size: Large Cars
-                    Year: '2024'
-                    Trim: Integra A-Spec
-                    Model: Integra
-                  - Make: Acura
-                    CityMPG: '29'
-                    CityELEC: '0'
-                    CombMPG: '32'
-                    CombELEC: '0'
-                    Cyl: '4'
-                    Displace: '1.5'
-                    Drive: Front-Wheel Drive
-                    Fuel: Premium
-                    HighwELEC: '0'
-                    HighwMPG: '36'
-                    Trans: Automatic (AV-S7)
-                    Size: Large Cars
-                    Year: '2024'
-                    Trim: Integra A-Spec
-                    Model: Integra
+                    - Make: Acura
+                      CityMPG: '30'
+                      CityELEC: '0'
+                      CombMPG: '33'
+                      CombELEC: '0'
+                      Cyl: '4'
+                      Displace: '1.5'
+                      Drive: Front-Wheel Drive
+                      Fuel: Premium
+                      HighwELEC: '0'
+                      HighwMPG: '37'
+                      Trans: Automatic (AV-S7)
+                      Size: Large Cars
+                      Year: '2024'
+                      Trim: Integra
+                      Model: Integra
+                    - Make: Acura
+                      CityMPG: '21'
+                      CityELEC: '0'
+                      CombMPG: '24'
+                      CombELEC: '0'
+                      Cyl: '4'
+                      Displace: '2'
+                      Drive: Front-Wheel Drive
+                      Fuel: Premium
+                      HighwELEC: '0'
+                      HighwMPG: '28'
+                      Trans: Manual 6-spd
+                      Size: Large Cars
+                      Year: '2024'
+                      Trim: Integra
+                      Model: Integra
+                    - Make: Acura
+                      CityMPG: '26'
+                      CityELEC: '0'
+                      CombMPG: '30'
+                      CombELEC: '0'
+                      Cyl: '4'
+                      Displace: '1.5'
+                      Drive: Front-Wheel Drive
+                      Fuel: Premium
+                      HighwELEC: '0'
+                      HighwMPG: '36'
+                      Trans: Manual 6-spd
+                      Size: Large Cars
+                      Year: '2024'
+                      Trim: Integra A-Spec
+                      Model: Integra
+                    - Make: Acura
+                      CityMPG: '29'
+                      CityELEC: '0'
+                      CombMPG: '32'
+                      CombELEC: '0'
+                      Cyl: '4'
+                      Displace: '1.5'
+                      Drive: Front-Wheel Drive
+                      Fuel: Premium
+                      HighwELEC: '0'
+                      HighwMPG: '36'
+                      Trans: Automatic (AV-S7)
+                      Size: Large Cars
+                      Year: '2024'
+                      Trim: Integra A-Spec
+                      Model: Integra
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -152,4 +141,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
