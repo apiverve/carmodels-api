@@ -2,17 +2,17 @@ from setuptools import setup, find_packages
 
 setup(
     name='apiverve_carmodels',
-    version='1.1.12',
+    version='1.1.13',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
         'requests',
         'setuptools'
     ],
-    description='Car Models is a simple tool for getting information on cars. It returns information on various car models',
+    description='Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com',
+    url='https://apiverve.com/marketplace/carmodels?utm_source=pypi&utm_medium=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
