@@ -1,6 +1,6 @@
 # Car Models Android SDK
 
-Car Models is a simple tool for getting information on cars. It returns information on various car models
+Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Platform](https://img.shields.io/badge/Platform-Android-green.svg)
@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:carmodels-api:1.1.12'
+    implementation 'com.github.apiverve:carmodels-api:1.1.13'
 }
 ```
 
@@ -47,7 +47,8 @@ CarModelsAPIClient client = new CarModelsAPIClient("YOUR_API_KEY");
 try {
     // Prepare query parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("key", "value");
+    parameters.put("make", "Toyota");
+    parameters.put("year", 2024);
 
     // Execute the request
     APIResponse response = client.execute(parameters);
@@ -135,7 +136,7 @@ For detailed API documentation, visit: [https://docs.apiverve.com/ref/carmodels]
 
 ## Get Your API Key
 
-Get your API key from [https://apiverve.com](https://apiverve.com)
+Get your API key from [https://apiverve.com](https://apiverve.com?utm_source=android&utm_medium=readme)
 
 ---
 
@@ -162,4 +163,4 @@ This SDK is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## About APIVerve
 
-[APIVerve](https://apiverve.com) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
+[APIVerve](https://apiverve.com?utm_source=android&utm_medium=readme) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
