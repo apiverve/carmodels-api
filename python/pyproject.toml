@@ -1,17 +1,20 @@
 [project]
 name = "apiverve-carmodels"
-version = "1.1.12"
+version = "1.1.13"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Car Models is a simple tool for getting information on cars. It returns information on various car models"
-keywords = ["car models", "car models api", "car models tool", "car models software", "car models service"]
+description = "Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications."
+keywords = []
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.7"
+license = "MIT"
+dependencies = [
+    "requests>=2.25.0"
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Intended Audience :: Financial and Insurance Industry",
