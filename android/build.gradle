@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.apiverve'
-version = '1.1.12'
+version = '1.1.13'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -20,13 +20,13 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.apiverve'
             artifactId = 'carmodels-api'
-            version = '1.1.12'
+            version = '1.1.13'
 
             from components.java
 
             pom {
                 name = 'Car Models'
-                description = 'Car Models is a simple tool for getting information on cars. It returns information on various car models'
+                description = 'Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.'
                 url = 'https://apiverve.com'
 
                 licenses {
