@@ -45,23 +45,18 @@ namespace APIVerve.API.CarModels
         public string Make { get; set; }
 
         [JsonProperty("CityMPG")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long CityMpg { get; set; }
 
         [JsonProperty("CityELEC")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long CityElec { get; set; }
 
         [JsonProperty("CombMPG")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long CombMpg { get; set; }
 
         [JsonProperty("CombELEC")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long CombElec { get; set; }
 
         [JsonProperty("Cyl")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Cyl { get; set; }
 
         [JsonProperty("Displace")]
@@ -74,11 +69,9 @@ namespace APIVerve.API.CarModels
         public string Fuel { get; set; }
 
         [JsonProperty("HighwELEC")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long HighwElec { get; set; }
 
         [JsonProperty("HighwMPG")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long HighwMpg { get; set; }
 
         [JsonProperty("Trans")]
@@ -88,7 +81,6 @@ namespace APIVerve.API.CarModels
         public string Size { get; set; }
 
         [JsonProperty("Year")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Year { get; set; }
 
         [JsonProperty("Trim")]
