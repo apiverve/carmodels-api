@@ -1,7 +1,7 @@
 /**
- * Basic Example - Car Models API
+ * Basic Example - US Car Models API
  *
- * This example demonstrates how to use the Car Models API.
+ * This example demonstrates how to use the US Car Models API.
  * Make sure to set your API key in the .env file or replace '[YOUR_API_KEY]' below.
  */
 
@@ -20,7 +20,7 @@ var query = {
 };
 
 // Make the API request using callback
-console.log('Making request to Car Models API...\n');
+console.log('Making request to US Car Models API...\n');
 
 api.execute(query, function (error, data) {
     if (error) {
