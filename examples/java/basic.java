@@ -1,4 +1,4 @@
-import com.apiverve.carmodels.CarModelsAPIClient;
+import com.apiverve.carmodels.USCarModelsAPIClient;
 import com.apiverve.carmodels.APIResponse;
 import com.apiverve.carmodels.APIException;
 import org.json.JSONObject;
@@ -9,11 +9,15 @@ import java.util.Map;
 public class BasicExample {
     public static void main(String[] args) {
         // Initialize the API client with your API key
-        CarModelsAPIClient client = new CarModelsAPIClient("YOUR_API_KEY_HERE");
+        USCarModelsAPIClient client = new USCarModelsAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Query parameters
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;make&quot;, &quot;Toyota&quot;);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
