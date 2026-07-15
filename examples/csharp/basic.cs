@@ -1,7 +1,7 @@
 /*
- * Car Models API - Basic Usage Example
+ * US Car Models API - Basic Usage Example
  *
- * This example demonstrates the basic usage of the Car Models API.
+ * This example demonstrates the basic usage of the US Car Models API.
  * API Documentation: https://docs.apiverve.com/ref/carmodels
  */
 
@@ -14,22 +14,29 @@ using System.Linq;
 
 namespace APIVerve.Examples
 {
-    class CarModelsExample
+    class USCarModelsExample
     {
         private static readonly string API_KEY = Environment.GetEnvironmentVariable("APIVERVE_API_KEY") ?? "YOUR_API_KEY_HERE";
         private static readonly string API_URL = "https://api.apiverve.com/v1/carmodels";
 
         /// <summary>
-        /// Make a GET request to the Car Models API
+        /// Make a GET request to the US Car Models API
         /// </summary>
-        static async Task<JsonDocument> CallCarModelsAPI()
+        static async Task<JsonDocument> CallUSCarModelsAPI()
         {
             try
             {
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                var response = await client.GetAsync(API_URL);
+                // Query parameters
+                var queryParams &#x3D; new Dictionary&lt;string, string&gt; { [&quot;make&quot;] &#x3D; &quot;Toyota&quot; };
+
+                var queryString = string.Join("&",
+                    queryParams.Select(kvp => $"{kvp.Key}={Uri.EscapeDataString(kvp.Value)}"));
+                var url = $"{API_URL}?{queryString}";
+
+                var response = await client.GetAsync(url);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
@@ -62,9 +69,9 @@ namespace APIVerve.Examples
 
         static async Task Main(string[] args)
         {
-            Console.WriteLine("📤 Calling Car Models API...\n");
+            Console.WriteLine("📤 Calling US Car Models API...\n");
 
-            var result = await CallCarModelsAPI();
+            var result = await CallUSCarModelsAPI();
 
             if (result != null)
             {
