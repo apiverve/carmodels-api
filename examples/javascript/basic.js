@@ -1,7 +1,7 @@
 /**
- * Car Models API - Basic Usage Example
+ * US Car Models API - Basic Usage Example
  *
- * This example demonstrates the basic usage of the Car Models API.
+ * This example demonstrates the basic usage of the US Car Models API.
  * API Documentation: https://docs.apiverve.com/ref/carmodels
  */
 
@@ -9,11 +9,16 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/carmodels';
 
 /**
- * Make a GET request to the Car Models API
+ * Make a GET request to the US Car Models API
  */
-async function callCarModelsAPI() {
+async function callUSCarModelsAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            make: &#x27;Toyota&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
@@ -44,7 +49,7 @@ async function callCarModelsAPI() {
 }
 
 // Run the example
-callCarModelsAPI()
+callUSCarModelsAPI()
   .then(result => {
     if (result) {
       console.log('\n📊 Final Result:');
