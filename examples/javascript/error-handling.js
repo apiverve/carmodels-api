@@ -1,7 +1,7 @@
 /**
- * Car Models API - Error Handling Example
+ * US Car Models API - Error Handling Example
  *
- * This example demonstrates proper error handling when using the Car Models API.
+ * This example demonstrates proper error handling when using the US Car Models API.
  * API Documentation: https://docs.apiverve.com/ref/carmodels
  */
 
@@ -20,7 +20,7 @@ class APIError extends Error {
 /**
  * Make an API call with comprehensive error handling
  */
-async function callCarModelsAPIWithErrorHandling(queryParams = {}) {
+async function callUSCarModelsAPIWithErrorHandling(queryParams = {}) {
   try {
     console.log('📤 Making API request...');
 
@@ -105,7 +105,7 @@ async function callWithRetry(maxRetries = 3, initialDelay = 1000) {
     try {
       console.log(`\n🔄 Attempt ${attempt}/${maxRetries}`);
 
-      const result = await callCarModelsAPIWithErrorHandling({
+      const result = await callUSCarModelsAPIWithErrorHandling({
         // Your query parameters here
       });
 
