@@ -1,7 +1,7 @@
 """
-Car Models API - Basic Usage Example
+US Car Models API - Basic Usage Example
 
-This example demonstrates the basic usage of the Car Models API.
+This example demonstrates the basic usage of the US Car Models API.
 API Documentation: https://docs.apiverve.com/ref/carmodels
 """
 
@@ -14,14 +14,17 @@ API_URL = 'https://api.apiverve.com/v1/carmodels'
 
 def call_carmodels_api():
     """
-    Make a GET request to the Car Models API
+    Make a GET request to the US Car Models API
     """
     try:
+        # Query parameters
+        params &#x3D; {&#x27;make&#x27;: &#x27;Toyota&#x27;}
+
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.get(API_URL, headers=headers, params=params)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
@@ -42,7 +45,7 @@ def call_carmodels_api():
         return None
 
 if __name__ == '__main__':
-    print('📤 Calling Car Models API...\n')
+    print('📤 Calling US Car Models API...\n')
 
     result = call_carmodels_api()
 
