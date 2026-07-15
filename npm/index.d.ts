@@ -4,37 +4,30 @@ declare module '@apiverve/carmodels' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface carmodelsResponse {
     status: string;
     error: string | null;
-    data: CarModelsData;
+    data: USCarModelsData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
-  interface CarModelsData {
-      count:      number;
-      filteredOn: string[];
-      cars:       Car[];
-  }
-  
-  interface Car {
-      make:      string;
-      cityMPG:   string;
-      cityELEC:  string;
-      combMPG:   string;
-      combELEC:  string;
-      cyl:       string;
-      displace:  string;
-      drive:     string;
-      fuel:      string;
-      highwELEC: string;
-      highwMPG:  string;
-      trans:     string;
-      size:      string;
-      year:      string;
-      trim:      string;
-      model:     string;
+  interface USCarModelsData {
+      count:      number | null;
+      filteredOn: (null | string)[];
+      cars:       { [key: string]: null | string }[];
   }
 
   export default class carmodelsWrapper {
