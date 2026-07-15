@@ -1,12 +1,12 @@
 {
   "name": "@apiverve/carmodels",
-  "version": "1.1.14",
-  "description": "Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.",
+  "version": "1.2.0",
+  "description": "US Car Models provides comprehensive data on vehicles sold in the United States. Returns detailed specifications including fuel economy (MPG), engine details, transmission, and more for cars from 1984 to present.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
     "index.js",
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    ""
+    "car models", "us car models api", "vehicle data", "car data api", "car make model"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,15 +34,14 @@
   "bugs": {
     "url": "https://github.com/apiverve/carmodels-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/carmodels?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://carmodels.apiverve.com?utm_source=npm&utm_medium=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
     "dotenv": "^16.4.7"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "promise": "^8.3.0",
-    "axios": "1.13.2"
+    "axios": "1.13.2",
+    "form-data": "^4.0.1"
   }
 }
