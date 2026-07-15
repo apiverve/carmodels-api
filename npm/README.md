@@ -1,13 +1,13 @@
-# Car Models API
+# US Car Models API
 
-Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.
+US Car Models provides comprehensive data on vehicles sold in the United States. Returns detailed specifications including fuel economy (MPG), engine details, transmission, and more for cars from 1984 to present.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/carmodels.svg)](https://www.npmjs.com/package/@apiverve/carmodels)
 
-This is a Javascript Wrapper for the [Car Models API](https://apiverve.com/marketplace/carmodels?utm_source=npm&utm_medium=readme)
+This is a Javascript Wrapper for the [US Car Models API](https://carmodels.apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -27,7 +27,7 @@ yarn add @apiverve/carmodels
 
 ## Configuration
 
-Before using the Car Models API client, you have to setup your account and obtain your API Key.
+Before using the US Car Models API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
@@ -36,7 +36,7 @@ You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_
 
 [Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=readme)
 
-The Car Models API documentation is found here: [https://docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels?utm_source=npm&utm_medium=readme).
+The US Car Models API documentation is found here: [https://docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels?utm_source=npm&utm_medium=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
