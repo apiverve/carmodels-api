@@ -1,6 +1,6 @@
-# Car Models API - Examples
+# US Car Models API - Examples
 
-This folder contains example code for using the Car Models API across different platforms.
+This folder contains example code for using the US Car Models API across different platforms.
 
 ## 📁 Examples Structure
 
