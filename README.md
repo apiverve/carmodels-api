@@ -191,11 +191,107 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the US Car Models API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "count": 4,
+    "filteredOn": [
+      "year",
+      "make",
+      "model"
+    ],
+    "cars": [
+      {
+        "Make": "Acura",
+        "CityMPG": "30",
+        "CityELEC": "0",
+        "CombMPG": "33",
+        "CombELEC": "0",
+        "Cyl": "4",
+        "Displace": "1.5",
+        "Drive": "Front-Wheel Drive",
+        "Fuel": "Premium",
+        "HighwELEC": "0",
+        "HighwMPG": "37",
+        "Trans": "Automatic (AV-S7)",
+        "Size": "Large Cars",
+        "Year": "2024",
+        "Trim": "Integra",
+        "Model": "Integra"
+      },
+      {
+        "Make": "Acura",
+        "CityMPG": "21",
+        "CityELEC": "0",
+        "CombMPG": "24",
+        "CombELEC": "0",
+        "Cyl": "4",
+        "Displace": "2",
+        "Drive": "Front-Wheel Drive",
+        "Fuel": "Premium",
+        "HighwELEC": "0",
+        "HighwMPG": "28",
+        "Trans": "Manual 6-spd",
+        "Size": "Large Cars",
+        "Year": "2024",
+        "Trim": "Integra",
+        "Model": "Integra"
+      },
+      {
+        "Make": "Acura",
+        "CityMPG": "26",
+        "CityELEC": "0",
+        "CombMPG": "30",
+        "CombELEC": "0",
+        "Cyl": "4",
+        "Displace": "1.5",
+        "Drive": "Front-Wheel Drive",
+        "Fuel": "Premium",
+        "HighwELEC": "0",
+        "HighwMPG": "36",
+        "Trans": "Manual 6-spd",
+        "Size": "Large Cars",
+        "Year": "2024",
+        "Trim": "Integra A-Spec",
+        "Model": "Integra"
+      },
+      {
+        "Make": "Acura",
+        "CityMPG": "29",
+        "CityELEC": "0",
+        "CombMPG": "32",
+        "CombELEC": "0",
+        "Cyl": "4",
+        "Displace": "1.5",
+        "Drive": "Front-Wheel Drive",
+        "Fuel": "Premium",
+        "HighwELEC": "0",
+        "HighwMPG": "36",
+        "Trans": "Automatic (AV-S7)",
+        "Size": "Large Cars",
+        "Year": "2024",
+        "Trim": "Integra A-Spec",
+        "Model": "Integra"
+      }
+    ]
+  }
 }
 ```
 
