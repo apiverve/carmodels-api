@@ -1,13 +1,13 @@
-CarModels API
+USCarModels API
 ============
 
-Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.
+US Car Models provides comprehensive data on vehicles sold in the United States. Returns detailed specifications including fuel economy (MPG), engine details, transmission, and more for cars from 1984 to present.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [CarModels API](https://apiverve.com/marketplace/carmodels?utm_source=nuget&utm_medium=readme)
+This is a .NET Wrapper for the [USCarModels API](https://carmodels.apiverve.com?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -15,17 +15,17 @@ This is a .NET Wrapper for the [CarModels API](https://apiverve.com/marketplace/
 
 Using the .NET CLI:
 ```
-dotnet add package APIVerve.API.CarModels
+dotnet add package APIVerve.API.USCarModels
 ```
 
 Using the Package Manager:
 ```
-nuget install APIVerve.API.CarModels
+nuget install APIVerve.API.USCarModels
 ```
 
 Using the Package Manager Console:
 ```
-Install-Package APIVerve.API.CarModels
+Install-Package APIVerve.API.USCarModels
 ```
 
 From within Visual Studio:
@@ -33,8 +33,8 @@ From within Visual Studio:
 1. Open the Solution Explorer
 2. Right-click on a project within your solution
 3. Click on Manage NuGet Packages
-4. Click on the Browse tab and search for "APIVerve.API.CarModels"
-5. Click on the APIVerve.API.CarModels package, select the appropriate version in the right-tab and click Install
+4. Click on the Browse tab and search for "APIVerve.API.USCarModels"
+5. Click on the APIVerve.API.USCarModels package, select the appropriate version in the right-tab and click Install
 
 ---
 
@@ -51,18 +51,18 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.USCarModels;
 
 class Program
 {
     static async Task Main(string[] args)
     {
         // Initialize the API client
-        var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]");
+        var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+        var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
         // Make the API call
@@ -93,17 +93,17 @@ class Program
 
 ## Usage
 
-The CarModels API documentation is found here: [https://docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels?utm_source=nuget&utm_medium=readme).
+The USCarModels API documentation is found here: [https://docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels?utm_source=nuget&utm_medium=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-CarModels API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+USCarModels API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
-var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]");
+var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]");
 ```
 
 ---
@@ -117,17 +117,17 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.USCarModels;
 
 public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]");
+        var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+        var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -150,17 +150,17 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.USCarModels;
 
 public class Example
 {
     public static void Main(string[] args)
     {
-        var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]");
+        var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+        var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -188,17 +188,17 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.USCarModels;
 
 public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]");
+        var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+        var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
         try
@@ -241,21 +241,21 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.USCarModels;
 
 public class Example
 {
     public static async Task Main(string[] args)
     {
-        var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]");
+        var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]");
 
         // Configure retry behavior (max 3 retries)
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+        var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
         try
@@ -289,15 +289,15 @@ public class Example
 Add custom headers to your requests:
 
 ```csharp
-var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]");
+var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]");
 
 // Add custom headers
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -314,7 +314,7 @@ apiClient.ClearCustomHeaders();
 Enable logging for debugging:
 
 ```csharp
-var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]", isDebug: true);
+var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]", isDebug: true);
 
 // Or use a custom logger
 apiClient.SetLogger(message =>
@@ -322,9 +322,9 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -335,15 +335,15 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 Customize retry behavior for failed requests:
 
 ```csharp
-var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]");
+var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]");
 
 // Set retry options
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -354,12 +354,12 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    make = "Toyota",
-    year = 2024
+var queryOptions = new USCarModelsQueryOptions {
+    Make = "Toyota",
+    Year = 2024
 };
 
-using (var apiClient = new CarModelsAPIClient("[YOUR_API_KEY]"))
+using (var apiClient = new USCarModelsAPIClient("[YOUR_API_KEY]"))
 {
     var response = await apiClient.ExecuteAsync(queryOptions);
     Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(response, Newtonsoft.Json.Formatting.Indented));
