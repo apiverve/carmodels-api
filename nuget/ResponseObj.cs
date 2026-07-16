@@ -6,7 +6,7 @@
 //
 //    var responseObj = ResponseObj.FromJson(jsonString);
 
-namespace APIVerve.API.CarModels
+namespace APIVerve.API.USCarModels
 {
     using System;
     using System.Collections.Generic;
@@ -25,68 +25,32 @@ namespace APIVerve.API.CarModels
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("count")]
-        public long Count { get; set; }
+        public long? Count { get; set; }
 
         [JsonProperty("filteredOn")]
         public string[] FilteredOn { get; set; }
 
         [JsonProperty("cars")]
-        public Car[] Cars { get; set; }
+        public Dictionary<string, string>[] Cars { get; set; }
     }
 
-    public partial class Car
+    public partial class Premium
     {
-        [JsonProperty("Make")]
-        public string Make { get; set; }
+        [JsonProperty("message")]
+        public string Message { get; set; }
 
-        [JsonProperty("CityMPG")]
-        public long CityMpg { get; set; }
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
 
-        [JsonProperty("CityELEC")]
-        public long CityElec { get; set; }
-
-        [JsonProperty("CombMPG")]
-        public long CombMpg { get; set; }
-
-        [JsonProperty("CombELEC")]
-        public long CombElec { get; set; }
-
-        [JsonProperty("Cyl")]
-        public long Cyl { get; set; }
-
-        [JsonProperty("Displace")]
-        public string Displace { get; set; }
-
-        [JsonProperty("Drive")]
-        public string Drive { get; set; }
-
-        [JsonProperty("Fuel")]
-        public string Fuel { get; set; }
-
-        [JsonProperty("HighwELEC")]
-        public long HighwElec { get; set; }
-
-        [JsonProperty("HighwMPG")]
-        public long HighwMpg { get; set; }
-
-        [JsonProperty("Trans")]
-        public string Trans { get; set; }
-
-        [JsonProperty("Size")]
-        public string Size { get; set; }
-
-        [JsonProperty("Year")]
-        public long Year { get; set; }
-
-        [JsonProperty("Trim")]
-        public string Trim { get; set; }
-
-        [JsonProperty("Model")]
-        public string Model { get; set; }
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
