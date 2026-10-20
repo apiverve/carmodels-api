@@ -21,5 +21,17 @@ namespace APIVerve.API.USCarModels
         /// </summary>
         [JsonProperty("year")]
         public int? Year { get; set; }
+
+        /// <summary>
+        /// Narrow to a model name (e.g., Camry)
+        /// </summary>
+        [JsonProperty("model")]
+        public string Model { get; set; }
+
+        /// <summary>
+        /// Narrow to a trim level (e.g., Hybrid)
+        /// </summary>
+        [JsonProperty("trim")]
+        public string Trim { get; set; }
     }
 }

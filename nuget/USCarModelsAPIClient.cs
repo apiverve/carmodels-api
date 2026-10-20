@@ -68,7 +68,9 @@ namespace APIVerve.API.USCarModels
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
             { "make", new ValidationRule { Type = "string", Required = true } },
-            { "year", new ValidationRule { Type = "integer", Required = false, Min = 1984, Max = 2030 } }
+            { "year", new ValidationRule { Type = "integer", Required = false, Min = 1984, Max = 2030 } },
+            { "model", new ValidationRule { Type = "string", Required = false } },
+            { "trim", new ValidationRule { Type = "string", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>
