@@ -1,5 +1,5 @@
 import unittest
-from apiverve_carmodels.apiClient import CarmodelsAPIClient
+from apiverve_uscarmodels.apiClient import CarmodelsAPIClient
 from unittest.mock import patch
 
 class TestCarmodelsAPIClient(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestCarmodelsAPIClient(unittest.TestCase):
         self.api_key = 'test_api_key'
         self.client = CarmodelsAPIClient(self.api_key)
 
-    @patch('apiverve_carmodels.apiClient.requests.get')
+    @patch('apiverve_uscarmodels.apiClient.requests.get')
     def test_make_request_success(self, mock_get):
         # Assuming there's an endpoint 'test_endpoint' for testing purposes
         mock_get.return_value.status_code = 200
@@ -16,7 +16,7 @@ class TestCarmodelsAPIClient(unittest.TestCase):
         response = self.client.get('test_endpoint')
         self.assertIsInstance(response, dict)
 
-    @patch('apiverve_carmodels.apiClient.requests.get')
+    @patch('apiverve_uscarmodels.apiClient.requests.get')
     def test_make_request_failure(self, mock_get):
         # Assuming there's an endpoint 'test_endpoint' for testing purposes
         mock_get.return_value.status_code = 404

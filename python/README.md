@@ -1,13 +1,12 @@
-Car Models API
+US Car Models API
 ============
 
-Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.
+US Car Models is a car make and model API for vehicles sold in the United States from 1984 to present. List models by make on any plan, while paid plans add year filters, trims, fuel economy (MPG), engine details, and transmission specifications.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Car Models API](https://apiverve.com/marketplace/carmodels?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-uscarmodels.svg)](https://pypi.org/project/apiverve-uscarmodels/)
+
+This is a Python wrapper for the [US Car Models API](https://apiverve.com/marketplace/carmodels?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -16,21 +15,21 @@ This is a Python API Wrapper for the [Car Models API](https://apiverve.com/marke
 Using `pip`:
 
 ```bash
-pip install apiverve-carmodels
+pip install apiverve-uscarmodels
 ```
 
 Using `pip3`:
 
 ```bash
-pip3 install apiverve-carmodels
+pip3 install apiverve-uscarmodels
 ```
 
 ---
 
 ## Configuration
 
-Before using the carmodels API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the US Car Models API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -39,14 +38,16 @@ You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_
 Here's a simple example to get you started quickly:
 
 ```python
-from apiverve_carmodels.apiClient import CarmodelsAPIClient
+from apiverve_uscarmodels.apiClient import CarmodelsAPIClient
 
 # Initialize the client with your APIVerve API key
 api = CarmodelsAPIClient("[YOUR_API_KEY]")
 
 query = {
     "make": "Toyota",
-    "year": 2024
+    "year": 2024,
+    "model": "Camry",
+    "trim": "Hybrid"
 }
 
 try:
@@ -63,14 +64,14 @@ except Exception as e:
 
 ## Usage
 
-The Car Models API documentation is found here: [https://docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels?utm_source=pypi&utm_medium=readme).
+The US Car Models API documentation is found here: [https://docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ```python
 # Import the client module
-from apiverve_carmodels.apiClient import CarmodelsAPIClient
+from apiverve_uscarmodels.apiClient import CarmodelsAPIClient
 
 # Initialize the client with your APIVerve API key
 api = CarmodelsAPIClient("[YOUR_API_KEY]")
@@ -87,7 +88,9 @@ Using the API client, you can perform requests to the API.
 ```python
 query = {
     "make": "Toyota",
-    "year": 2024
+    "year": 2024,
+    "model": "Camry",
+    "trim": "Hybrid"
 }
 ```
 
@@ -201,13 +204,15 @@ The API client provides comprehensive error handling through the `CarmodelsAPICl
 ### Basic Error Handling
 
 ```python
-from apiverve_carmodels.apiClient import CarmodelsAPIClient, CarmodelsAPIClientError
+from apiverve_uscarmodels.apiClient import CarmodelsAPIClient, CarmodelsAPIClientError
 
 api = CarmodelsAPIClient("[YOUR_API_KEY]")
 
 query = {
     "make": "Toyota",
-    "year": 2024
+    "year": 2024,
+    "model": "Camry",
+    "trim": "Hybrid"
 }
 
 try:
@@ -225,13 +230,15 @@ except CarmodelsAPIClientError as e:
 ### Handling Specific Error Types
 
 ```python
-from apiverve_carmodels.apiClient import CarmodelsAPIClient, CarmodelsAPIClientError
+from apiverve_uscarmodels.apiClient import CarmodelsAPIClient, CarmodelsAPIClientError
 
 api = CarmodelsAPIClient("[YOUR_API_KEY]")
 
 query = {
     "make": "Toyota",
-    "year": 2024
+    "year": 2024,
+    "model": "Camry",
+    "trim": "Hybrid"
 }
 
 try:
@@ -264,11 +271,13 @@ except Exception as e:
 The client supports the context manager protocol for automatic resource cleanup:
 
 ```python
-from apiverve_carmodels.apiClient import CarmodelsAPIClient, CarmodelsAPIClientError
+from apiverve_uscarmodels.apiClient import CarmodelsAPIClient, CarmodelsAPIClientError
 
 query = {
     "make": "Toyota",
-    "year": 2024
+    "year": 2024,
+    "model": "Camry",
+    "trim": "Hybrid"
 }
 
 # Using context manager ensures proper cleanup
@@ -290,14 +299,16 @@ with CarmodelsAPIClient("[YOUR_API_KEY]") as api:
 Enable debug logging to see detailed request and response information:
 
 ```python
-from apiverve_carmodels.apiClient import CarmodelsAPIClient
+from apiverve_uscarmodels.apiClient import CarmodelsAPIClient
 
 # Enable debug mode
 api = CarmodelsAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
     "make": "Toyota",
-    "year": 2024
+    "year": 2024,
+    "model": "Camry",
+    "trim": "Hybrid"
 }
 
 # Debug information will be printed to console
@@ -309,13 +320,15 @@ result = api.execute(query)
 If you need to manually manage the session lifecycle:
 
 ```python
-from apiverve_carmodels.apiClient import CarmodelsAPIClient
+from apiverve_uscarmodels.apiClient import CarmodelsAPIClient
 
 api = CarmodelsAPIClient("[YOUR_API_KEY]")
 
 query = {
     "make": "Toyota",
-    "year": 2024
+    "year": 2024,
+    "model": "Camry",
+    "trim": "Hybrid"
 }
 
 try:
@@ -330,7 +343,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -341,12 +354,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
