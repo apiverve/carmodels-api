@@ -30,7 +30,7 @@ class carmodelsWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/carmodels';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"make":{"type":"string","required":true},"year":{"type":"integer","required":false,"min":1984,"max":2030}};
+        this.validationRules = {"make":{"type":"string","required":true},"year":{"type":"integer","required":false,"min":1984,"max":2030},"model":{"type":"string","required":false},"trim":{"type":"string","required":false}};
     }
 
     /**
