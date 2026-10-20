@@ -18,7 +18,7 @@ def call_carmodels_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;make&#x27;: &#x27;Toyota&#x27;}
+        params &#x3D; {&#x27;make&#x27;: &#x27;Toyota&#x27;, &#x27;model&#x27;: &#x27;Camry&#x27;}
 
         headers = {
             'x-api-key': API_KEY

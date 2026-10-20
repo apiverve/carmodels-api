@@ -15,7 +15,8 @@ async function callUSCarModelsAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            make: &#x27;Toyota&#x27;
+            make: &#x27;Toyota&#x27;,
+            model: &#x27;Camry&#x27;
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

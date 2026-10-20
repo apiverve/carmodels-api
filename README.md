@@ -1,13 +1,13 @@
-# [US Car Models API](https://carmodels.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [US Car Models API](https://apiverve.com/marketplace/carmodels?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-US Car Models provides comprehensive data on vehicles sold in the United States. Returns detailed specifications including fuel economy (MPG), engine details, transmission, and more for cars from 1984 to present.
+US Car Models is a car make and model API for vehicles sold in the United States from 1984 to present. List models by make on any plan, while paid plans add year filters, trims, fuel economy (MPG), engine details, and transmission specifications.
 
 The US Car Models API provides a simple, reliable way to integrate us car models functionality into your applications. Built for developers who need production-ready us car models capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://carmodels.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/carmodels?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://carmodels.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/carmodels?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -31,7 +31,8 @@ The US Car Models API provides a simple, reliable way to integrate us car models
 async function callUSCarModelsAPI() {
     try {
         const params = new URLSearchParams({
-            make: 'Toyota'
+            make: 'Toyota',
+            model: 'Camry'
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/carmodels?${params}`, {
@@ -54,7 +55,7 @@ callUSCarModelsAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/carmodels?make=Toyota" \
+curl -X GET "https://api.apiverve.com/v1/carmodels?make=Toyota&model=Camry" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -161,7 +162,7 @@ go get github.com/apiverve/carmodels-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [US Car Models API](https://carmodels.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [US Car Models API](https://apiverve.com/marketplace/carmodels?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -299,7 +300,7 @@ A real response from the US Car Models API:
 
 ## Support & Community
 
-- 🏠 **API Home**: [US Car Models API](https://carmodels.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [US Car Models API](https://apiverve.com/marketplace/carmodels?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
