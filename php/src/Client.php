@@ -15,11 +15,11 @@ use APIVerve\Carmodels\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['make' => 'Toyota', 'year' => 2024]);
+ * $response = $client->execute(['make' => 'Toyota', 'year' => 2024, 'model' => 'Camry', 'trim' => 'Hybrid']);
  * print_r($response);
  * ```
  *
- * @see https://carmodels.apiverve.com?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/carmodels?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {
@@ -35,7 +35,9 @@ class Client
      */
     private const VALIDATION_RULES = [
         'make' => ['type' => 'string', 'required' => true],
-        'year' => ['type' => 'integer', 'required' => false, 'min' => 1984, 'max' => 2030]
+        'year' => ['type' => 'integer', 'required' => false, 'min' => 1984, 'max' => 2030],
+        'model' => ['type' => 'string', 'required' => false],
+        'trim' => ['type' => 'string', 'required' => false]
     ];
 
     /**

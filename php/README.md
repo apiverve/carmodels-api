@@ -1,6 +1,6 @@
 # US Car Models API - PHP Package
 
-US Car Models provides comprehensive data on vehicles sold in the United States. Returns detailed specifications including fuel economy (MPG), engine details, transmission, and more for cars from 1984 to present.
+US Car Models is a car make and model API for vehicles sold in the United States from 1984 to present. List models by make on any plan, while paid plans add year filters, trims, fuel economy (MPG), engine details, and transmission specifications.
 
 ## Installation
 
@@ -29,7 +29,9 @@ $client = new Client('YOUR_API_KEY');
 // Make a request
 $response = $client->execute([
     'make' => 'Toyota',
-    'year' => 2024
+    'year' => 2024,
+    'model' => 'Camry',
+    'trim' => 'Hybrid'
 ]);
 
 // Print the response
@@ -45,7 +47,7 @@ use APIVerve\Carmodels\Exceptions\APIException;
 use APIVerve\Carmodels\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['make' => 'Toyota', 'year' => 2024]);
+    $response = $client->execute(['make' => 'Toyota', 'year' => 2024, 'model' => 'Camry', 'trim' => 'Hybrid']);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
@@ -163,11 +165,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/carmodels?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/carmodels?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://carmodels.apiverve.com?utm_source=php&utm_medium=readme](https://carmodels.apiverve.com?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/carmodels?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/carmodels?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License

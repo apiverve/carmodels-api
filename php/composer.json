@@ -1,7 +1,7 @@
 {
     "name": "apiverve/carmodels",
-    "description": "US Car Models provides comprehensive data on vehicles sold in the United States. Returns detailed specifications including fuel economy (MPG), engine details, transmission, and more for cars from 1984 to present.",
-    "version": "1.2.0",
+    "description": "US Car Models is a car make and model API for vehicles sold in the United States from 1984 to present. List models by make on any plan, while paid plans add year filters, trims, fuel economy (MPG), engine details, and transmission specifications.",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "carmodels",
-        "car models",
+        "car make and model api",
         "us car models api",
-        "vehicle data",
-        "car data api",
-        "car make model"
+        "car api",
+        "car models json",
+        "car make model database"
     ],
-    "homepage": "https://carmodels.apiverve.com?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/carmodels?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/carmodels",
