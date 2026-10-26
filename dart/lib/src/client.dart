@@ -44,13 +44,15 @@ final _formatPatterns = {
   'hexColor': RegExp(r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$'),
 };
 
-/// Car Models API client.
+/// US Car Models API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/carmodels?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/carmodels?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [make] (required) - The make (manufacturer) of the car (e.g., Toyota, Honda, Ford)
 /// * [year] - Filter by year (1984-present) [min: 1984, max: 2030]
+/// * [model] - Narrow to a model name (e.g., Camry)
+/// * [trim] - Narrow to a trim level (e.g., Hybrid)
 class CarmodelsClient {
   final String apiKey;
   final String baseUrl;
@@ -60,6 +62,8 @@ class CarmodelsClient {
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'make': ValidationRule(type: 'string', required: true),
     'year': ValidationRule(type: 'integer', required: false, min: 1984, max: 2030),
+    'model': ValidationRule(type: 'string', required: false),
+    'trim': ValidationRule(type: 'string', required: false),
   };
 
   CarmodelsClient(this.apiKey, {
@@ -125,7 +129,7 @@ class CarmodelsClient {
     }
   }
 
-  /// Execute a request to the Car Models API.
+  /// Execute a request to the US Car Models API.
   ///
   /// Parameters are validated before sending the request.
   Future<CarmodelsResponse> execute(Map<String, dynamic> params) async {
@@ -170,7 +174,7 @@ class CarmodelsClient {
   }
 }
 
-/// Exception thrown by the Car Models API client.
+/// Exception thrown by the US Car Models API client.
 class CarmodelsException implements Exception {
   final String message;
 

@@ -1,11 +1,11 @@
-# Car Models API - Dart/Flutter Client
+# US Car Models API - Dart/Flutter Client
 
-Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.
+US Car Models is a car make and model API for vehicles sold in the United States from 1984 to present. List models by make on any plan, while paid plans add year filters, trims, fuel economy (MPG), engine details, and transmission specifications.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_carmodels.svg)](https://pub.dev/packages/apiverve_carmodels)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [Car Models API](https://apiverve.com/marketplace/carmodels?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [US Car Models API](https://apiverve.com/marketplace/carmodels?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_carmodels: ^1.1.14
+  apiverve_carmodels: ^1.2.3
 ```
 
 Then run:
@@ -35,7 +35,9 @@ void main() async {
   try {
     final response = await client.execute({
       'make': 'Toyota',
-      'year': 2024
+      'year': 2024,
+      'model': 'Camry',
+      'trim': 'Hybrid'
     });
 
     print('Status: ${response.status}');
@@ -139,12 +141,12 @@ void main() async {
 
 ## API Reference
 
-- **API Home:** [Car Models API](https://apiverve.com/marketplace/carmodels?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels?utm_source=dart&utm_medium=readme)
+- **API Home:** [US Car Models API](https://apiverve.com/marketplace/carmodels?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/carmodels](https://docs.apiverve.com/ref/carmodels?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -152,4 +154,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)

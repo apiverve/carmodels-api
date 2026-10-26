@@ -1,7 +1,7 @@
 name: apiverve_carmodels
-description: Car Models is a simple tool for getting information on cars. It returns information on various car models including makes, models, trims, and specifications.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/carmodels?utm_source=dart&utm_medium=homepage
+description: "US Car Models is a car make and model API for vehicles sold in the United States from 1984 to present. List models by make on any plan, while paid plans add year filters, trims, fuel economy (MPG), engine details, and transmission specifications."
+version: 1.2.3
+homepage: https://apiverve.com/marketplace/carmodels?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/carmodels-api/tree/main/dart
 
 environment:

@@ -1,5 +1,5 @@
-## 1.1.14
+## 1.2.3
 
 - Initial release
-- Full API support for Car Models API
+- Full API support for US Car Models API
 - Typed request/response models
